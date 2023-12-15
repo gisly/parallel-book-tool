@@ -1,0 +1,32 @@
+<div class="signupForm">
+    <div class="signupForm__container">
+        <form  (ngSubmit)="onSubmit()"  class="signupForm__form">
+            <h2 class="signupForm__title">Регистрация</h2>
+            <div class="signupForm__field">
+                <input type="text" placeholder="Имя пользователя">
+            </div>
+            <div class="signupForm__field">
+                <input formControlName="email" required type="email" id="email" placeholder="Email">
+            </div>
+            <div class="signupForm__field">
+                <input 
+                    type="{{toggleShowPassword ? 'text' : 'password'}}"
+                    formControlName="password"
+                    id="password"
+                    required
+                    (ngModel)="password"
+                    placeholder="Введите пароль"
+                >
+            </div>
+            <div class="signupForm__field">
+                <input type="password" placeholder="Потвердите пароль">
+            </div>
+            <div class="signupForm__field">
+                <input [disabled]="!userData.valid" type="submit" value="Зарегистрироваться">
+            </div>
+            <div class="signupForm__field">
+                <a href="/login" class="loginForm__forgot">Уже есть аккаунт?</a>
+            </div>
+        </form>
+    </div>
+</div>

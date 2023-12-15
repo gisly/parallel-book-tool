@@ -1,0 +1,262 @@
+.passwordValidation  {
+    position: relative;
+    width: 300px;
+}
+
+.passwordValidation__inputBox {
+    position: relative;
+    width: 100%;
+    background: #fff;padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.passwordValidation__inputBox input {
+    position: relative;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 10px 5px;
+}
+
+.passwordValidation__toggle {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.passwordValidation__toggle::before {
+    content: '\f06e';
+    font-family: fontAwesome;
+}
+
+.passwordValidation__toggle.hide::before {
+    content: '\f070';
+}
+
+.passwordValidation__valid {
+    background: var(--gradient-23);
+    padding: 10px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.passwordValidation__ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.passwordValidation__li {
+    position: relative;
+    color: var(--gray-0);
+    font-size: 0.95em;
+    transition: 0.5s;
+}
+
+.passwordValidation__li::before {
+    content: '\f192';
+    font-family: fontAwesome;
+    display: inline-flex;
+    height: 10px;
+    width: 20px;
+}
+
+.passwordValidation__li.valid {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.passwordValidation__li.valid::before {
+    content: '\f00c';
+}
+
+.lowerCaseValid {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.lowerCaseValid::before {
+    content: '\f00c' !important;
+}
+
+.upperCaseValid {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.upperCaseValid::before {
+    content: '\f00c' !important;
+}
+
+.numberValid {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.numberValid::before {
+    content: '\f00c' !important;
+}
+
+.specialCharValid {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.specialCharValid::before {
+    content: '\f00c' !important;
+}
+
+.minLengthValid {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.minLengthValid::before {
+    content: '\f00c' !important;
+}
+
+
+@property --slope {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes moving {
+    0% 
+    {
+        --slope: 0deg;
+    }
+    100% 
+    {
+        --slope: 360deg;
+    }
+}
+
+.signupForm {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+ }
+ 
+.signupForm::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('../../../assets/cat#1.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+ 
+.signupForm__container {
+    position: relative;
+    width: 350px;
+    height: 340px;;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+    background: var(--bg-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    transition: 0.5s;
+    overflow: hidden; 
+}
+ 
+.signupForm__container::before  {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(
+         from var(--slope),
+         #45f3ff 0%,
+         #45f3ff 10%,
+         transparent 10%,
+         transparent 80%,
+         #45f3ff 100%
+     );
+    border-radius: 20px;
+    animation: moving 3.2s linear infinite;
+}
+
+.signupForm__container::after {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    align-self: center;
+    border-radius: 15px;
+    background: var(--bg-secondary);
+}
+
+.signupForm__form {
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    transition: 0.5s;
+    z-index: 2;
+}
+ 
+.signupForm__title {
+    position: relative;
+    color: #fff;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+ 
+.signupForm__field {
+    position: relative;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+ 
+.signupForm__field input {
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 6px 15px;
+    font-style: 0.85em;
+    color: #fff;
+}
+ 
+.signupForm__field input::placeholder {
+     color: rgba(255, 255, 255, 0.5);;
+}
+ 
+.signupForm__field input[type="submit"]:enabled {
+     background-color: #2196f3;
+     font-weight: 500;
+     cursor: pointer;
+}
+
+.signupForm__field input[type="submit"]:disabled {
+    background-color: #85919b;
+}
+ 
+.signupForm__field a {
+     color: #fff;
+     text-decoration: none;
+     font-size: 0.95em;
+}
+ 
+.signupForm__signup {
+     text-decoration: underline;
+}

@@ -1,0 +1,28 @@
+.home {
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+    min-height: 100vh;
+}
+
+.home__container {
+    min-height: 100%;
+    min-width: 100%;
+    grid-column: 4/28;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    row-gap: 8vh;
+    column-gap: 2vh;
+}
+
+.home__card {
+    height: 410px;
+    width: 440px;
+    background: var(--bg-secondary);
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
